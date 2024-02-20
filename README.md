@@ -332,13 +332,13 @@ systemctl enabled dhcpd
 
 В настройках виртуальной машины pxeclient рекомендуется поменять графический контроллер на VMSVGA и добавить видеопамяти. Видеопамять должна стать 20 МБ или больше.
 
-![img](./img/3.png)
+![3](https://github.com/dimkaspaun/pxe/assets/156161074/72c61ebc-69aa-4a06-b9cd-b4e65f043ee8)
 
 С такими настройками картинка будет более плавная и не будет постоянно мигать.
 
 Нажимаем ОК, выходим из настроек ВМ и запускаем её.
 
-![img](./img/4.png)
+![4](https://github.com/dimkaspaun/pxe/assets/156161074/5eeee112-94e0-4fe3-b65b-dbc86ab5a2bf)
 
 Выбираем графическую установку
 
@@ -346,7 +346,7 @@ systemctl enabled dhcpd
 
 Как только появится окно установки, нам нужно будет поочереди пройти по всем компонентам и указать с какими параметрами мы хотим установить ОС:
 
-![img](./img/5.png)
+![5](https://github.com/dimkaspaun/pxe/assets/156161074/882dbaef-ec93-40b3-9e40-0c275a327bb0)
 
 Иногда с разделом Installation Source случаются проблемы, и репозиторий не подтягивается автоматически. В этом случае нужно руками указать адрес репозитория: http://10.0.0.20/centos8/BaseOS
 
@@ -448,9 +448,10 @@ menu title OTUS PXE Boot Menu
 
 После внесения данных изменений, можем перезапустить нашу ВМ pxeclient и проверить, что запустится процесс автоматической установки ОС.
 
-![img](./img/6.png)
+![6](https://github.com/dimkaspaun/pxe/assets/156161074/1e5af818-8ce9-40cd-8f22-84e8902dbfe9)
 
-![img](./img/7.png)
+![7](https://github.com/dimkaspaun/pxe/assets/156161074/a88ac041-4895-46f2-a004-d1b17339e332)
+
 
 Для запуска Ansible сразу из Vagrant нужно добавить следующий код в описание ВМ pxeserver:
 
@@ -464,12 +465,3 @@ end
 ```
 
 > [Готовый плейбук Ansible](./ansible/provision.yml)
-
-## Рекомендуемые источники
-
-- Статья о TFTP - https://ru.wikipedia.org/wiki/Trivial_File_Transfer_Protocol
-- Статья о DHCP - https://ru.wikipedia.org/wiki/DHCP
-- Статья «Накатываем ось. Разбираемся с сервером установки в Cobbler» - https://xakep.ru/2016/06/15/cobbler/
-- Оффициальная документация Cobbler - https://cobbler.readthedocs.io/en/latest/quickstart-guide.html
-- Статья «PXE Boot : Configure PXE Server» - https://www.server-world.info/en/note?os=CentOS_8&p=pxe&f=1
-- Статья «Configure IPv4 UEFI PXE Boot with Kickstart [RHEL/CentOS 8]» - https://www.golinuxcloud.com/configure-uefi-pxe-boot-with-kickstart/
